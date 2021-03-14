@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: money-ddip-service
+  config:
+    activate:
+      on-profile: local

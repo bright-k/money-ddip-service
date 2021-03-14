@@ -1,0 +1,10 @@
+version: '3.6'
+services:
+  ddip-mysql:
+    image: 'mysql:5.7'
+    ports:
+      - "13306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'money_ddip'
+      MYSQL_DATABASE: 'money_ddip'
+    command: --character-set-server=utf8mb4

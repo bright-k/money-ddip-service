@@ -1,0 +1,64 @@
+server:
+  port: ${PORT:8080}
+
+management:
+  health:
+    defaults:
+      enabled: false
+    diskspace:
+      enabled: true
+    mongo:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    gateway:
+      enabled: true
+    metrics:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+        step: 1m
+        descriptions: false
+    web:
+      server:
+        max-uri-tags: 1000
+      client:
+        max-uri-tags: 1000
+
+spring:
+  datasource:
+    initialization-mode: never
+    driver-class-name: com.mysql.jdbc.Driver
+    url: 'jdbc:mysql://localhost:13306/money_ddip?useLegacyDatetimeCode=false&serverTimezone=GMT&useUnicode=true&useSSL=false'
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:money_ddip}
+    hikari:
+      data-source-properties:
+        connectTimeout: 5000
+        socketTimeout: 300000
+        useLegacyDatetimeCode: false
+        serverTimezone: UTC
+        characterEncoding: UTF-8
+        useUnicode: true
+        useSSL: false
+        logSlowQueries: true
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL57InnoDBDialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+      use-new-id-generator-mappings: false
+
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: true
+      WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS: false
+    deserialization:
+      READ_DATE_TIMESTAMPS_AS_NANOSECONDS: false
