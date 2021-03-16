@@ -16,5 +16,6 @@ CREATE TABLE `ddip_slot` (
   `amount` INT NOT NULL,
   `taken_user_id` BIGINT(20),
   `created_at` DATETIME(6) NOT NULL,
+  `assignment_at` DATETIME(6) NOT NULL,
   CONSTRAINT `PK__ddip_slot__id` PRIMARY KEY (`ddip_id`, `slot`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

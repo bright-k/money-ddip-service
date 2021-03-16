@@ -19,4 +19,4 @@ open class DdipException(
     )
 }
 
-class InternalServerException(errorType: ErrorType = ErrorType.INTERNAL_SERVER_ERROR) : DdipException(ErrorType.INTERNAL_SERVER_ERROR)
+class InternalServerException(errorType: ErrorType = ErrorType.INTERNAL_SERVER_ERROR) : DdipException(errorType)

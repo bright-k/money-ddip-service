@@ -63,7 +63,6 @@ open class Ddip(
             ).apply {
                 val list = mutableListOf<DdipSlot>()
                 for (i in 1..memberCount) {
-
                 }
                 slots = list
             }

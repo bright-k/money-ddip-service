@@ -36,4 +36,6 @@ open class DdipSlot(
     @Column(name = "created_at")
     open var createdAt: Instant = Instant.now()
 ) {
+    @Column(name = "assignment_at")
+    open var assignmentAt: Instant? = null
 }
